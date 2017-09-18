@@ -19,6 +19,7 @@
   "homepage": "https://github.com/avillarreal01/twitter-js#readme",
   "dependencies": {
     "express": "^4.15.4",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "nunjucks": "^3.0.1"
   }
 }
