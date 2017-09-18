@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/avillarreal01/twitter-js/issues"
   },
-  "homepage": "https://github.com/avillarreal01/twitter-js#readme"
+  "homepage": "https://github.com/avillarreal01/twitter-js#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
