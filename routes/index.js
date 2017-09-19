@@ -18,8 +18,8 @@ module.exports  = function(io){
     var name = req.body.name;
     var text = req.body.text;
     tweetBank.add(name, text);
-    res.redirect('/');
-    io.sockets.emit('newTweet', { name:name, text : text });    
+    //res.redirect('/');
+    io.sockets.emit('newTweet', { name:name, content : text });    
     });
 
     
