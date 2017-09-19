@@ -41,4 +41,4 @@ const randArrayEl = function(arr) {
     module.exports.add( getFakeName(), getFakeTweet() );
   }
 
-  console.log(data);
+  //console.log(data);
