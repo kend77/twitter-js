@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
+const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./routes');
 
@@ -9,21 +10,16 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', {noCache: true});
 
-//Middleware
+//middleware
 app.use(morgan('tiny'));
-app.use('/special/', (req, res, next) => {
-  console.log('You are someone special.');
-  next();
-});
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 //routes
 app.use('/', routes);
 
-
-const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-
+//stat server
 app.listen(3000, function() {
   console.log('Server listening...');
 });
