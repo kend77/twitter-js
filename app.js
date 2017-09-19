@@ -17,15 +17,9 @@ app.use('/special/', (req, res, next) => {
 //Routing
 app.get('/', (req, res) => {
   res.render( 'index', {title: 'Hall of Fame', people: people} );
-//  res.send('Hey! Welcome home!');
 });
 
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-
-
-
-//res.render( 'index', {title: 'Hall of Fame', people: people} );
-
 
 app.listen(3000, function() {
   console.log('Server listening...');
