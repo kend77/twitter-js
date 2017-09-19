@@ -16,21 +16,16 @@ app.use('/special/', (req, res, next) => {
 
 //Routing
 app.get('/', (req, res) => {
-  res.send('Hey! Welcome home!');
+  res.render( 'index', {title: 'Hall of Fame', people: people} );
+//  res.send('Hey! Welcome home!');
 });
 
-var locals = {
-  title: 'An Example',
-  people: [
-    {name: 'Gandalf'},
-    {name: 'Frodo'},
-    {name: 'Hermione'}
-  ]
-};
-nunjucks.render('index.html', locals, function (err, output) {
-  if (err) throw err;
-  console.log(output);
-});
+const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+
+
+
+//res.render( 'index', {title: 'Hall of Fame', people: people} );
+
 
 app.listen(3000, function() {
   console.log('Server listening...');
