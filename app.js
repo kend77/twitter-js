@@ -5,9 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./routes');
 var socketio = require('socket.io');
+
+
 // ...
 
 
+
+// old code 
 var server = app.listen(3000);
 var io = socketio.listen(server);
 
@@ -18,9 +22,11 @@ nunjucks.configure('views', {noCache: true});
 
 //middleware
 app.use(morgan('tiny'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('public'));
+// body parser: grab data that clients post in forms, and prepare data as array 
+app.use(bodyParser.json());// for AJAX request. nothing with our project
+app.use(bodyParser.urlencoded({ extended: false })); // for HTML form submits
+//static: go check if public fold has any css file. if yes, send then ALL to client
+app.use(express.static('public')); 
 
 //routes
 app.use('/', routes(io) );
